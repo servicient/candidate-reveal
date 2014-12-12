@@ -1,0 +1,22 @@
+{
+  "name": "candidate-reveal",
+  "version": "1.0.0",
+  "description": "Job candidate easter egg hunt",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/servicient/candidate-reveal"
+  },
+  "author": "Luke Wendling",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/servicient/candidate-reveal/issues"
+  },
+  "homepage": "https://github.com/servicient/candidate-reveal",
+  "dependencies": {
+    "basic-auth": "^1.0.0"
+  }
+}
