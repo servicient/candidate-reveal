@@ -4,11 +4,9 @@ var http = require('http'),
 
 function serve (req, res) {
   var credentials = auth(req);
-  console.log(credentials)
-  console.log(process.env)
   var allow = credentials &&
     credentials.name === process.env.USER &&
-    credentials.pass === process.env.PWD;
+    credentials.pass === process.env.PASS;
 
   if (true /*req.connection.encrypted*/) {
     if (allow) {
