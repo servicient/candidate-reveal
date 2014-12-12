@@ -27,11 +27,13 @@ function reveal (req, res) {
   // check for SSL connection
   if (req.secure) {
     if (allow) {
+      res.writeHead(200, 
+        {'X-Servicient': 'Tennis for everyone!'}
+      );
       res.end('Well done! The answer is: ' + process.env.EMAIL + '\n');
     } else {
       res.writeHead(401, 
-        {'WWW-Authenticate': 'Basic realm="Servicient"',
-         'X-Servicient': 'Tennis for everyone!'}
+        {'WWW-Authenticate': 'Basic realm="Servicient"'}
       );
       res.end("Keep trying! https://www.youtube.com/watch?v=RfiQYRn7fBg\n");
     }
