@@ -1,14 +1,27 @@
-var http = require('http'),
+var express = require('express'),
   auth = require('basic-auth'),
-  server = http.createServer(serve);
+  app = express(),
+  debug = require('debug')('http');
 
-function serve (req, res) {
+/* ROUTES */
+app.get('/reveal', reveal);
+
+/* SERVER */
+var server = app.listen(process.env.PORT, function () {
+  var host = server.address().address;
+  var port = server.address().port;
+  debug('listening at http://%s:%s', host, port);
+});
+
+/* REQ HANDLERS */
+function reveal (req, res) {
   var credentials = auth(req);
   var allow = credentials &&
     credentials.name === process.env.USER &&
     credentials.pass === process.env.PASS;
 
-  if (true /*req.connection.encrypted*/) {
+  // check for SSL connection
+  if (req.secure) {
     if (allow) {
       res.end('Well done! The answer is: ' + process.env.EMAIL + '\n');
     } else {
@@ -22,5 +35,3 @@ function serve (req, res) {
     res.end("Don't forget to use SSL! Try again!\n");
   }
 }
-
-server.listen(process.env.PORT);

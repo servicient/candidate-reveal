@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/servicient/candidate-reveal",
   "dependencies": {
-    "basic-auth": "^1.0.0"
+    "basic-auth": "^1.0.0",
+    "debug": "^2.1.0",
+    "express": "^4.10.5"
   }
 }
