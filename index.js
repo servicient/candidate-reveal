@@ -28,7 +28,7 @@ function reveal (req, res) {
   if (req.secure) {
     if (allow) {
       res.writeHead(200, 
-        {'X-Servicient': 'Tennis for everyone!'}
+        {'X-Tennis': 'Tennis for everyone!'}
       );
       res.end('Well done! The answer is: ' + process.env.EMAIL + '\n');
     } else {
