@@ -1,7 +1,7 @@
 {
   "name": "candidate-reveal",
   "version": "1.0.0",
-  "description": "Job candidate easter egg hunt",
+  "description": "A treasure hunt for dev candidates",
   "engines": {
     "node": "0.10.x"
   },
