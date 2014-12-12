@@ -8,7 +8,7 @@ function serve (req, res) {
     credentials.name === process.env.USER &&
     credentials.pass === process.env.PWD;
 
-  if (req.connection.encrypted) {
+  if (true /*req.connection.encrypted*/) {
     if (allow) {
       res.end('Well done! The answer is: ' + process.env.EMAIL + '\n');
     } else {
