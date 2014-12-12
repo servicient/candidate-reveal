@@ -36,6 +36,6 @@ function reveal (req, res) {
       res.end("Keep trying! https://www.youtube.com/watch?v=RfiQYRn7fBg\n");
     }
   } else {
-    res.end("Don't forget to use SSL! Try again!\n");
+    res.end("Don't forget to use HTTPS! Try again!\n");
   }
 }
