@@ -3,6 +3,10 @@ var express = require('express'),
   app = express(),
   debug = require('debug')('http');
 
+/* CONFIG */
+// pass connection info from proxy to app
+app.set('trust proxy', true);
+
 /* ROUTES */
 app.get('/reveal', reveal);
 
